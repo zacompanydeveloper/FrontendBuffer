@@ -1,16 +1,19 @@
-import HomeView from '../views/HomeView.vue'
-
 export const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView,
+    component: () => import('@/pages/Home.vue'),
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue'),
+    path: '/activate',
+    name: 'activate',
+    component: () => import('@/pages/Activate.vue'),
   },
+  {
+    path: '/check',
+    name: 'check',
+    component: () => import('@/pages/Check.vue'),
+  }
 ]
 
 export default routes

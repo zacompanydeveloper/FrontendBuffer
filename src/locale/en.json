@@ -1,5 +1,12 @@
 {
   "e-warranty": "E Warranty",
-  "active": "Activated",
-  "returned": "Claimed"
-}
+  "pending" : "Warranty Pending",
+  "active": "Warranty Activated",
+  "returned": "Warranty Returned",
+  "warranty_activate" : "E Warranty Activate",
+  "warranty_check" : "E Warranty Check",
+  "search": "Search",
+  "loc_number_not_found" : "LOC Number not found!",
+  "warranty_type": "Warranty Type",
+  "request_otp" : "Request OTP"
+} 

@@ -18,9 +18,10 @@ axios.interceptors.response.use(
       } else if (status === 403) {
         router.push('/no-permission')
       } else if (status === 500) {
-        toast.error(helper.getErrorMessageByStatusCode(status))
+        //
       }
     } else {
+      // toast.error('Unknown Error Occure!')
     }
     return Promise.reject(error)
   },
@@ -28,7 +29,7 @@ axios.interceptors.response.use(
 
 function get(url, params) {
   return axios({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BACKEND_URL,
     method: 'get',
     url,
     params,
@@ -38,7 +39,7 @@ function get(url, params) {
 
 function post(url, data) {
   return axios({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BACKEND_URL,
     method: 'post',
     url,
     data,
@@ -48,7 +49,7 @@ function post(url, data) {
 
 function put(url, data) {
   return axios({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BACKEND_URL,
     method: 'put',
     url,
     data,
@@ -58,7 +59,7 @@ function put(url, data) {
 
 function destroy(url, data) {
   return axios({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BACKEND_URL,
     method: 'delete',
     url,
     data,
@@ -68,7 +69,7 @@ function destroy(url, data) {
 
 function filePost(url, data) {
   return axios({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BACKEND_URL,
     method: 'post',
     url,
     data,
