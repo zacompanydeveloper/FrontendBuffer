@@ -257,11 +257,8 @@ function activateFun() {
         customer_township: form.township,
         otp_code : form.otpCode
     }).then((response) => {
-        if (response.data.success) {
-            router.push({ name: 'warranty-activate-success' });
-            activated.value = true;
-            successActivatedMessage();
-        }
+        activated.value = true;
+        successActivatedMessage();
     }).catch((error) => {
         if(error.message = "OTP မှား ယွင်းနေပါသည်။") {
             invalidOtp.value = true;
