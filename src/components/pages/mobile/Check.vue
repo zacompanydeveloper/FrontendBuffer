@@ -25,7 +25,7 @@
                 <div class=" w-full">
                     <IconField class="w-full">
                         <InputIcon class="pi pi-search w-5 h-5 " />
-                        <InputText v-model="form.locNumber" placeholder="Search with LOTNumber" class="w-full"
+                        <InputText v-model="form.locNumber" placeholder="Search with LOT Number" class="w-full"
                             :invalid="locNumberError" :disabled="checked" />
                         <InputIcon class="pi pi-spin pi-spinner w-5 h-5" v-if="loading.checked" />
                         <InputIcon class="pi pi-check w-5 h-5" v-else />
