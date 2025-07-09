@@ -249,6 +249,8 @@ function activateFun() {
     if (!valid.value) {
         return;
     }
+
+    console.log('hi');
     
     api.post('/warranty/activate-by-customer', {
         serial_number: form.locNumber,
