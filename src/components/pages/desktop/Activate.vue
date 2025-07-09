@@ -249,6 +249,7 @@ function activateFun() {
     if (!valid.value) {
         return;
     }
+    
     api.post('/warranty/activate-by-customer', {
         serial_number: form.locNumber,
         customer_name: form.name,
@@ -259,6 +260,7 @@ function activateFun() {
     }).then((response) => {
         activated.value = true;
         successActivatedMessage();
+        router.push({ name: 'home' });
     }).catch((error) => {
         if(error.message = "OTP မှား ယွင်းနေပါသည်။") {
             invalidOtp.value = true;
