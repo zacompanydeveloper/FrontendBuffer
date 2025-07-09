@@ -6,7 +6,7 @@
   "warranty_activate" : "E Warranty Activate",
   "warranty_check" : "E Warranty Check",
   "search": "Search",
-  "loc_number_not_found" : "LOTNumber not found!",
+  "lot_number_activated" : "LOT Number is activated!",
   "warranty_type": "Warranty Type",
   "request_otp" : "Request OTP"
 } 

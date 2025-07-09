@@ -37,7 +37,7 @@
                                 <InputIcon class="pi pi-check w-5 h-5" v-if="checked" />
                             </IconField>
                             <label class="text-red-500 text-xs px-3" v-if="locNumberError">
-                                {{ $t('loc_number_not_found') }}
+                                {{ $t('lot_number_activated') }}
                             </label>
                         </div>
 
@@ -117,7 +117,7 @@
                         </Button>
 
                      
-                        <Button @click="activateFun" v-if="otpSend">
+                        <Button @click="activateFun" v-if="otpSend" :disabled="activated">
                             <span class="pi pi-spin pi-spinner w-5 h-5" v-if="loading.checked"></span>
                             <span> {{ $t('warranty_activate') }} </span>
                         </Button>
@@ -157,6 +157,7 @@ const checked = ref(false);
 const selectedTownship = ref(null);
 const otpSend = ref(false);
 const invalidOtp = ref(false);
+const activated = ref(false);
 
 const loading = reactive({
     checked: false,
@@ -181,6 +182,10 @@ onMounted(() => {
 
 function invalidOtpMessage() {
     toast.add({ severity: 'error', summary: 'error', detail: 'Your Otp is invalid', life: 10000 });
+};
+
+function successActivatedMessage() {
+    toast.add({ severity: 'success', summary: 'Success', detail: 'Your warranty has been activated successfully', life: 10000 });
 };
 
 function backFun() {
@@ -221,6 +226,8 @@ function removeCheckedWarrantyBox() {
     form.locNumber = null;
     checkedWarranty.value = null;
     otpSend.value = false;
+    invalidOtp.value = false;
+    activated.value = false;
 }
 
 function requestOtp() {
@@ -252,6 +259,8 @@ function activateFun() {
     }).then((response) => {
         if (response.data.success) {
             router.push({ name: 'warranty-activate-success' });
+            activated.value = true;
+            successActivatedMessage();
         }
     }).catch((error) => {
         if(error.message = "OTP မှား ယွင်းနေပါသည်။") {

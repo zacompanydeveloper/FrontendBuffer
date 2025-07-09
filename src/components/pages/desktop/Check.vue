@@ -42,7 +42,7 @@
                                 <InputIcon class="pi pi-check w-5 h-5" v-else />
                             </IconField>
                             <label class="text-red-500 text-xs px-3" v-if="locNumberError">
-                                {{ $t('loc_number_not_found') }}
+                                {{ $t('lot_number_activated') }}
                             </label>
                         </div>
 
