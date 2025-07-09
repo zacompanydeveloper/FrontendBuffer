@@ -260,7 +260,7 @@ function activateFun() {
     }).then((response) => {
         activated.value = true;
         successActivatedMessage();
-        router.push({ name: 'home' });
+        // router.push({ name: 'home' });
     }).catch((error) => {
         if(error.message = "OTP မှား ယွင်းနေပါသည်။") {
             invalidOtp.value = true;
