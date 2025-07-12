@@ -117,7 +117,7 @@
                         </Button>
 
                      
-                        <Button @click="activateFun" v-if="otpSend" :disabled="activated">
+                        <Button @click="activateFun" v-if="otpSend && !activated" :disabled="activated">
                             <span class="pi pi-spin pi-spinner w-5 h-5" v-if="loading.checked"></span>
                             <span> {{ $t('warranty_activate') }} </span>
                         </Button>

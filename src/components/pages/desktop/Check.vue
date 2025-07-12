@@ -71,7 +71,7 @@
                                             </div>
                                             <hr v-if="checkedWarranty.return_type">
                                             <div class=" text-sm" v-if="checkedWarranty.return_type">Return-Type : {{
-                                                helper.ucifrst(checkedWarranty.return_type) }}</div>
+                                                helper.ucfirst(checkedWarranty.return_type) }}</div>
                                             <div class=" text-sm" v-if="checkedWarranty.return_remark">Return-remark :
                                                 {{ helper.ucfirst(checkedWarranty.return_remark) }}</div>
                                         </div>
