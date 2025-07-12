@@ -31,7 +31,7 @@
                         <InputIcon class="pi pi-check w-5 h-5" v-else />
                     </IconField>
                     <label class="text-red-500 text-xs px-3" v-if="locNumberError">
-                        {{ $t('lot_number_activated') }}
+                        {{ $t(locNumberError) }}
                     </label>
                 </div>
 
@@ -52,20 +52,23 @@
                         <div class="bg-blue-100 p-5 border-2 rounded-md border-blue-500 w-full">
                             <label class="block text-gray-700 text-lg font-semibold mb-2">Warranty
                                 Status</label>
-                            <div class=" bg-blue-100 p-5 rounded-md flex flex-col gap-3">
+                            <div class=" bg-blue-100 p-1 rounded-md flex flex-col gap-3">
                                 <div class=" text text-[var(--base-color)]">{{ $t(checkedWarranty.status) }}</div>
+                                <hr v-if="checkedWarranty.return_type">
+                                <div class=" text-sm" v-if="checkedWarranty.return_type">Return-Type   :   {{ helper.ucfirst(checkedWarranty.return_type) }}</div>
+                                <div class=" text-sm" v-if="checkedWarranty.return_remark">Return-remark :   {{ helper.ucfirst(checkedWarranty.return_remark) }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Date -->
-                <div class="flex text-gray-500 w-full" v-if="checked && checkedWarranty?.status != 'pending'">
+                <div class="flex text-xs text-gray-500 w-full" v-if="checked && checkedWarranty?.status != 'pending'">
                     <div class=" border-2 rounded-md border-blue-500 p-5 w-full">
-                        <div class=" flex" v-if="checkedWarranty.status == 'returned'">
-                            <label class="block text-sm font-semibold mb-2">Claimed Date</label>
-                            <div class="  p-5 rounded-md flex flex-col gap-3">
-                                <div class=" text">{{ checkedWarranty.returned_at }}</div>
+                        <div class=" flex items-center" v-if="checkedWarranty.status == 'returned'">
+                            <label class="block text-sm font-semibold ">Claimed Date</label>
+                            <div class=" ml-3 rounded-md flex flex-col gap-3">
+                                <div class=" text">{{ checkedWarranty.return_date }}</div>
                             </div>
                         </div>
                         <div class=" flex-col" v-if="checkedWarranty.status == 'active'">
@@ -99,7 +102,7 @@
 import { computed, onMounted, reactive, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useToast } from "primevue/usetoast";
-
+import helper from '@/helper';
 
 import api from '@/api';
 import backend from '@/api/backend';
@@ -112,7 +115,7 @@ const form = reactive({
 const loading = reactive({
     checked: false,
 });
-const locNumberError = ref(false);
+const locNumberError = ref(null);
 const checked = ref(false);
 const checkedWarranty = ref(null);
 
@@ -122,16 +125,16 @@ function backFun() {
 
 function checkingFun() {
     loading.checked = true;
-    locNumberError.value = false;
+    locNumberError.value = null;
 
     api.get('/warranty/track', {
         'serial_number': form.locNumber
     }).then((response) => {
         checkedWarranty.value = response.data.data;
         checked.value = true;
-        locNumberError.value = false;
+        locNumberError.value = null;
     }).catch((error) => {
-        locNumberError.value = true;
+        locNumberError.value = error.response.data.message;
         checked.value = false;
     }).finally(() => {
         loading.checked = false;

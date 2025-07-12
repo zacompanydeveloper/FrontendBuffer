@@ -37,7 +37,7 @@
                                 <InputIcon class="pi pi-check w-5 h-5" v-if="checked" />
                             </IconField>
                             <label class="text-red-500 text-xs px-3" v-if="locNumberError">
-                                {{ $t('lot_number_activated') }}
+                                {{ $t(locNumberError) }}
                             </label>
                         </div>
 
@@ -150,7 +150,7 @@ import router from '@/router';
 
 const locale = useI18n().locale;
 const toast = useToast();
-const locNumberError = ref(false);
+const locNumberError = ref(null);
 const checkedWarranty = ref(null);
 const townships = ref([]);
 const checked = ref(false);
@@ -205,7 +205,7 @@ function fetchTownship() {
 
 function checkingFun() {
     loading.checked = true;
-    locNumberError.value = false;
+    locNumberError.value = null;
 
     api.get('/warranty/track', {
         'status': 'pending',
@@ -214,7 +214,7 @@ function checkingFun() {
         checkedWarranty.value = response.data.data;
         checked.value = true;
     }).catch((error) => {
-        locNumberError.value = true;
+        locNumberError.value = error.response.data.message;
         checked.value = false;
     }).finally(() => {
         loading.checked = false;
