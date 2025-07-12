@@ -258,7 +258,8 @@ function activateFun() {
         customer_phone: form.phoneNumber,
         customer_street: form.address,
         customer_township: form.township,
-        otp_code : form.otpCode
+        otp_code : form.otpCode,
+        activated_from : 'e_warranty_website'
     }).then((response) => {
         activated.value = true;
         successActivatedMessage();
