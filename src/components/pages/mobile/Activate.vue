@@ -101,6 +101,10 @@
                                 :disabled="!checked || otpSend" :invalid="invalidOtp" />
                         </IconField>
 
+                        <div>
+                            <SlideVerify @update="slideVerify = true"/>
+                        </div>
+
                         <!-- Otp  -->
                         <div class=" flex justify-center" v-if="valid">
                             <InputOtp v-model="form.otpCode" :length="6" :disabled="!checked" :invalid="invalidOtp"/>
@@ -134,7 +138,7 @@ import api from '@/api';
 import backend from '@/api/backend';
 import router from '@/router'; 
 
-
+const slideVerify = ref(false);
 const locale = useI18n().locale;
 const toast = useToast();
 const locNumberError = ref(null);
@@ -160,7 +164,7 @@ const form = reactive({
 });
 
 const valid = computed(() => {
-    return form.locNumber && form.name && form.phoneNumber && form.address && form.township && checked.value;
+    return form.locNumber && form.name && form.phoneNumber && form.address && form.township && checked.value && slideVerify.value;
 });
 
 onMounted(() => {

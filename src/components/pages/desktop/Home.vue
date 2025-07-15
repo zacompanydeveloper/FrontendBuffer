@@ -17,7 +17,6 @@
             </div>
         </div>
 
-
     </DesktopLayout>
 </template>
 <script setup>
