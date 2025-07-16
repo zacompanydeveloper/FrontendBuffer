@@ -9,7 +9,10 @@
 <script setup>
 import { computed, ref, watch } from "vue";
 import SlideVerify from 'vue3-slide-verify';
-import sca from '@/assets/images/activate.png';
+import sh1 from '@/assets/recaptcha/sh-1.jpg';
+import sh2 from '@/assets/recaptcha/sh-2.jpg';
+import sh3 from '@/assets/recaptcha/sh-3.jpg';
+import sh4 from '@/assets/recaptcha/sh-4.png';
 
 import "vue3-slide-verify/dist/style.css";
 
@@ -18,7 +21,10 @@ const block = ref(null);
 const msg = ref("");
 const text = "Slide to verify";
 const images = [
-    sca,
+    sh1,
+    sh2,
+    sh3,
+    sh4
 ];
 const isSuccessful = ref(false);
 const accuracy = 5;
