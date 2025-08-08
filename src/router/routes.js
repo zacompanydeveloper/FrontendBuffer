@@ -13,6 +13,11 @@ export const routes = [
     path: '/check',
     name: 'check',
     component: () => import('@/pages/Check.vue'),
+  },
+  {
+    path: '/e-warranty-temp-url/:code',
+    name: 'e-warranty-temp-url',
+    component: () => import('@/pages/EWarrantyTempUrl.vue'),
   }
 ]
 
