@@ -10,5 +10,17 @@
   "warranty_type": "Warranty Type",
   "request_otp" : "Request OTP",
   "serial_number_not_found" : "LOT Number not found",
-  "serial_number_is_already_activated" : "LOT Number is already activated"
+  "serial_number_is_already_activated" : "LOT Number is already activated",
+  "e_warranty_activation_agreement": "E Warranty Activation Agreement",
+  "customer_information" : "Customer Information",
+  "product_information" : "Product Information",
+  "warranty_information" : "Warranty Information",
+  "customer_name": "Customer Name",
+  "customer_phone": "Customer Phone",
+  "customer_address": "Customer Address",
+  "order_date": "Order Date",
+  "product" : "Product",
+  "lot_number": "LOT Number",
+  "category" : "Category",
+  "location" : "Location"
 } 
