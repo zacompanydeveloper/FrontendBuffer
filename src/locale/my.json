@@ -23,5 +23,8 @@
   "product": "ထုတ်ကုန်",
   "lot_number": "LOT နံပါတ်",
   "category": "အမျိုးအစား",
-  "location": "တည်နေရာ"
+  "location": "တည်နေရာ",
+  "name": "အမည်",
+  "phone": "ဖုန်း",
+  "address": "လိပ်စာ"
 }

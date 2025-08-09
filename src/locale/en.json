@@ -23,5 +23,8 @@
   "product" : "Product",
   "lot_number": "LOT Number",
   "category" : "Category",
-  "location" : "Location"
+  "location" : "Location",
+  "name" : "Name",
+  "phone" : "Phone",
+  "address" : "Address"
 } 
