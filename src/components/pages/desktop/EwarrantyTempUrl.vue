@@ -91,10 +91,25 @@
                     </div>
 
                     <!-- Agreement -->
-                    <div>
+                    <div class=" flex flex-col gap-5">
                         <p class="text-sm text-gray-600 my-3">
-                            {{ $t('e_warranty_activation_agreement_text') }}
+                            Before activating your warranty, please carefully read and agree to the following terms.
+                            Please read and agree to the following terms before activating your warranty.
                         </p>
+
+                        <div class=" flex justify-center">
+                            <input type="checkbox" id="agreement" class="mr-2 bg-[var(--base-color)]" v-model="agreed"/>
+                            <p>
+                                I have read and agree to the warranty terms and conditions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex w-full flex-row-reverse" v-if="agreed">
+                        <button class="w-[48%] bg-[var(--base-color)] text-white p-2 rounded-lg">
+                            {{ $t('warranty_activate') }}
+                        </button>
                     </div>
                     
                 </div>
@@ -105,9 +120,12 @@
 </template>
 <script setup>
 import DesktopLayout from '@/layouts/DesktopLayout.vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+
+const agreed = ref(false);
 
 function backFun() {
     router.push('/');
