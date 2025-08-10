@@ -15,9 +15,9 @@ export const routes = [
     component: () => import('@/pages/Check.vue'),
   },
   {
-    path: '/e-warranty-temp-url/:code',
+    path: '/e-warranty-temp-url/:signature/:base64data',
     name: 'e-warranty-temp-url',
-    component: () => import('@/pages/EWarrantyTempUrl.vue'),
+    component: () => import('@/pages/EwarrantyTempUrl.vue'),
   }
 ]
 
