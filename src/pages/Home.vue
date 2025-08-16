@@ -4,6 +4,7 @@
             <MobileHomePage />
         </div>
         <div v-else>
+            hi
             <DesktopHomePage />
         </div>
     </div>

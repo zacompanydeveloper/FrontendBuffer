@@ -1,12 +1,11 @@
 <template>
     <div>
-        hi
-        <!-- <div v-if="isMobile">
+        <div v-if="isMobile">
             <MobileEWarrantyTempUrlPage />
         </div>
         <div v-else>
             <DesktopEWarrantyTempUrlPage />
-        </div> -->
+        </div>
     </div>
 </template>
 <script setup>
