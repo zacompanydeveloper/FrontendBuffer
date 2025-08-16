@@ -18,6 +18,7 @@
   "warranty_information": "အွန်လိုင်းအာမခံ အချက်အလက်",
   "customer_name": "ဖောက်သည် အမည်",
   "customer_phone": "ဖောက်သည် ဖုန်းနံပါတ်",
+  "customer_email": "ဖောက်သည် အီးမေးလ်",
   "customer_address": "ဖောက်သည် လိပ်စာ",
   "order_date": "အော်ဒါ ရက်စွဲ",
   "product": "ထုတ်ကုန်",
@@ -26,5 +27,6 @@
   "location": "တည်နေရာ",
   "name": "အမည်",
   "phone": "ဖုန်း",
-  "address": "လိပ်စာ"
+  "address": "လိပ်စာ",
+  "email": "အီးမေးလ်"
 }

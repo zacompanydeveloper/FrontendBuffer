@@ -18,6 +18,7 @@
   "warranty_information" : "Warranty Information",
   "customer_name": "Customer Name",
   "customer_phone": "Customer Phone",
+  "customer_email": "Customer Email",
   "customer_address": "Customer Address",
   "order_date": "Order Date",
   "product" : "Product",
@@ -26,5 +27,7 @@
   "location" : "Location",
   "name" : "Name",
   "phone" : "Phone",
-  "address" : "Address"
+  "address" : "Address",
+  "email" : "Email"
+
 } 
