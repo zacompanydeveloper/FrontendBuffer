@@ -13,12 +13,14 @@ import {
   InputMask,
   InputOtp,
   Toast,
+  AutoComplete
 } from "primevue";
 
 import Aura from "@primeuix/themes/aura";
 import PrimeVue from "primevue/config";
 import Button from "primevue/button";
 import ToastService from 'primevue/toastservice';
+import KeyFilter from 'primevue/keyfilter';
 
 const MyPreset = definePreset(Aura, {
   semantic: {
@@ -62,3 +64,5 @@ app.component("Breadcrumb", Breadcrumb);
 app.component("InputMask", InputMask);
 app.component("InputOtp", InputOtp);
 app.component("Toast", Toast);
+app.directive('keyfilter', KeyFilter);
+app.component("AutoComplete", AutoComplete);

@@ -18,7 +18,7 @@ axios.interceptors.response.use(
       } else if (status === 403) {
         router.push('/no-permission')
       } else if (status === 500) {
-        toast.error(helper.getErrorMessageByStatusCode(status))
+        // toast.error(helper.getErrorMessageByStatusCode(status))
       }
     } else {
     }

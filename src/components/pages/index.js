@@ -8,6 +8,8 @@ import MobileCheckPage from './mobile/Check.vue'
 import DesktopCheckPage from './desktop/Check.vue'
 import MobileEWarrantyTempUrlPage from './mobile/EwarrantyTempUrl.vue'
 import DesktopEWarrantyTempUrlPage from './desktop/EwarrantyTempUrl.vue'
+import MobileLuckyDrawPage from './mobile/LuckyDraw.vue'
+import DesktopLuckyDrawPage from './desktop/LuckyDraw.vue'
 
 app.component('MobileHomePage', MobileHomePage)
 app.component('DesktopHomePage', DesktopHomePage)
@@ -17,4 +19,5 @@ app.component('MobileCheckPage', MobileCheckPage)
 app.component('DesktopCheckPage', DesktopCheckPage)
 app.component('MobileEWarrantyTempUrlPage', MobileEWarrantyTempUrlPage)
 app.component('DesktopEWarrantyTempUrlPage', DesktopEWarrantyTempUrlPage)
-
+app.component('MobileLuckyDrawPage', MobileLuckyDrawPage)
+app.component('DesktopLuckyDrawPage', DesktopLuckyDrawPage)
